@@ -1,0 +1,69 @@
+tag 29239b87008aaef4491858a10df9f68dfde2ccd4 2.1.0
+Author:	Brizag <vvv444@gmail.com>
+Date:	Tue Nov 7 19:56:26 2017 +0200
+
+Release 2.1.0
+
+commit 6817a71bfb997d37044c19367da0f72d92843635
+Author: Brizag <vvv444@gmail.com>
+Date:   Tue Nov 7 19:55:46 2017 +0200
+
+    Disable auto-monitoring feature following Blizzard's change.
+
+commit 288731ce5ddd46d8b32d6e3a7a21cfea40acff18
+Author: Brizag <vvv444@gmail.com>
+Date:   Sat Nov 4 22:34:09 2017 +0200
+
+    Fix 7.3 PlaySound API.
+
+commit b70324836542154991ff21a4bd97b6f15e5ef426
+Author: Tga123 <thegreatarronax@gmail.com>
+Date:   Wed Aug 30 18:54:04 2017 +0400
+
+    Bump TOC to 7.3
+    (cherry picked from commit 3140232f7b1703b3c3c1e85ba019fb435a27ef09)
+
+commit 078b51ab8bd20349223b54773c64c700c843a264
+Author: Tga123 <thegreatarronax@gmail.com>
+Date:   Wed Aug 30 18:51:55 2017 +0400
+
+    Fix 7.3 sound API & Add AtBT IDs.
+    (cherry picked from commit 8efe4e36298db4a362fda8a3873129727233ded3)
+
+commit 53c3e488e3a284c6f5583be4c4772c8911d0008b
+Author: Tga123 <thegreatarronax@gmail.com>
+Date:   Sun Jul 2 19:46:22 2017 +0400
+
+    Rework Activity Info
+    (cherry picked from commit 8583e62d914626dd7e9aa0b55141c5c84035b2cc)
+
+commit 3c67bd3a14e31ff8cc556a537c77b5efb5adf878
+Author: Tga123 <thegreatarronax@gmail.com>
+Date:   Sun Jul 2 19:29:55 2017 +0400
+
+    Bump TOC to 7.2
+    (cherry picked from commit 99dc5108532d82f3609d3832b4a8fa0ea211bf63)
+
+commit 65c676cad9b46be488ea3094539bf988d2ae85f7
+Author: midgain <swirel@hotmail.com>
+Date:   Thu Jun 29 13:28:13 2017 +1200
+
+    Fix showing ToS bosses in filter
+    (cherry picked from commit ee71761d82fc5bc7e3f8e417ba2e56194f6b671a)
+
+commit d9832983a12efc863e307056c3a119f8b07fb30c
+Author: Midgain <swirel@hotmail.com>
+Date:   Sun Jun 18 16:17:01 2017 +1200
+
+    added 7.2.5 instances and LFGListSearchPanel_ParseSearchTerms()
+    
+    (cherry picked from commit 449006bc92a3d42c96fa413cfb068c26b4a01941)
+
+commit 87b72bc58a81481741de2f4ec445374d6baab2f6
+Author: Zang MingJie <zealot0630@gmail.com>
+Date:   Sun Feb 12 16:56:54 2017 +0800
+
+    Add 7.1.5 instance and fix dup group name issue
+    
+    (cherry picked from commit 829e0898a6786c669f4f82380d358d5475fdd589)
+

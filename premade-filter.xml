@@ -11,7 +11,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 		</Layers>
         <Scripts>
             <OnClick>
-                PlaySound(856);
+                PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
                 PremadeFilterActivityFinder_Select(self:GetParent():GetParent():GetParent():GetParent(), self.activityID);
 			</OnClick>
             <OnEnter>
@@ -330,7 +330,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 									</OnTextChanged>
 									<OnEnterPressed>
 										PremadeFilterActivityFinder_Accept(self:GetParent():GetParent());
-										PlaySound(856);
+										PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 									</OnEnterPressed>
 								</Scripts>
 							</EditBox>
@@ -362,7 +362,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								</Anchors>
 								<Scripts>
 									<OnClick>
-										PlaySound(856);
+										PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 										PremadeFilterActivityFinder_Accept(self:GetParent():GetParent());
 									</OnClick>
 								</Scripts>
@@ -374,7 +374,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								</Anchors>
 								<Scripts>
 									<OnClick>
-										PlaySound(856);
+										PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 										PremadeFilterActivityFinder_Cancel(self:GetParent():GetParent());
 									</OnClick>
 								</Scripts>
@@ -454,7 +454,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 						</Anchors>
 						<Scripts>
 							<OnClick>
-								PlaySound(856);
+								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 								PremadeFilter_Frame.QueryBuilder:Show();
 							</OnClick>
 						</Scripts>
@@ -617,7 +617,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								InputBoxInstructions_OnTextChanged(self);
 							</OnTextChanged>
 							<OnEnterPressed>
-								PlaySound(856);
+								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 							</OnEnterPressed>
 						</Scripts>
 					</EditBox>
@@ -679,7 +679,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								InputBoxInstructions_OnTextChanged(self);
 							</OnTextChanged>
 							<OnEnterPressed>
-								PlaySound(856);
+								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 							</OnEnterPressed>
 						</Scripts>
 					</EditBox>
@@ -738,7 +738,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								InputBoxInstructions_OnTextChanged(self);
 							</OnTextChanged>
 							<OnEnterPressed>
-								PlaySound(856);
+								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 							</OnEnterPressed>
 						</Scripts>
 					</EditBox>
@@ -1430,7 +1430,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								</Anchors>
 								<Scripts>
 									<OnClick>
-										PlaySound(856);
+										PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 										self:GetParent():GetParent():Hide();
 									</OnClick>
 								</Scripts>
@@ -1442,7 +1442,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 								</Anchors>
 								<Scripts>
 									<OnClick>
-										PlaySound(856);
+										PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 										self:GetParent():GetParent():Hide();
 										PremadeFilter_BuildQuery();
 										LFGListSearchPanel_DoSearch(PremadeFilter_Frame:GetParent());
@@ -1515,7 +1515,7 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
 						<Alpha childKey="Highlight" startDelay="0.1" smoothing="NONE" duration="1.0" order="1" fromAlpha="1" toAlpha="0"/>
 						<Scripts>
 							<OnLoop>
-								PlaySound(47615);
+								PlaySound(SOUNDKIT.UI_GROUP_FINDER_RECEIVE_APPLICATION);
 							</OnLoop>
 						</Scripts>
 					</AnimationGroup>

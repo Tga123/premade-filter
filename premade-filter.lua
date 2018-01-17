@@ -1804,6 +1804,10 @@ function PremadeFilter_GetAvailableBosses()
 		EncounterJournal_TierDropDown_Select(nil, activity.tier);
 		
 		local instanceID = EJ_GetInstanceByIndex(activity.instance, activity.raid);		
+		if activity.tier == 7 and activity.instance == 6 and instanceID == 959 then
+			instanceID = 946
+		end
+
 		EncounterJournal_DisplayInstance(instanceID);
 		
 		if activity.difficulty then
