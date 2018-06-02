@@ -1,7 +1,7 @@
-## Interface: 80000
+## Interface: 70300
 ## Title: Premade Filter
 ## Title-ruRU: Premade Filter
-## Version: 2.2.0
+## Version: 2.1.1
 ## Author: PremadeFilter
 ## Notes: Advanced premade filtering
 ## Notes-ruRU: Расширенный фильтр премейдов

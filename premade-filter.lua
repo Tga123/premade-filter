@@ -1526,7 +1526,7 @@ function PremadeFilter_Frame_OnLoad(self)
 	DEFAULT_CHAT_FRAME:SetScript("OnHyperlinkEnter", PremadeFilter_Hyperlink_OnEnter);
 	DEFAULT_CHAT_FRAME:SetScript("OnHyperlinkLeave", PremadeFilter_Hyperlink_OnLeave);
 	
-	C_ChatInfo.RegisterAddonMessagePrefix("PREMADE_FILTER");
+	RegisterAddonMessagePrefix("PREMADE_FILTER");
 	
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", PremadeFilter_ChatFilter);
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", PremadeFilter_ChatFilter);
@@ -1556,7 +1556,7 @@ function PremadeFilter_OnEvent(self, event, ...)
 				local player = UnitName("player");
 				local version = GetAddOnMetadata("premade-filter", "Version");
 				
-				C_ChatInfo.SendAddonMessage("PREMADE_FILTER", "VER!"..player..":"..version, "WHISPER", sender);
+				SendAddonMessage("PREMADE_FILTER", "VER!"..player..":"..version, "WHISPER", sender);
 				
 				if SLASH_PFD1 then
 					PremadeFilter_PrintMessage(DEFAULT_CHAT_FRAME, sender.." requested addon version");
@@ -1705,7 +1705,7 @@ function PremadeFilter_OnShow(self)
 	if not self.VersionLabel:IsShown() then
 		local guildName = GetGuildInfo("player")
 		if guildName then
-			C_ChatInfo.SendAddonMessage("PREMADE_FILTER", "VER?", "GUILD");
+			SendAddonMessage("PREMADE_FILTER", "VER?", "GUILD");
 		end
 	end
 	
