@@ -2580,10 +2580,27 @@ function LFGListSearchPanel_UpdateResultList(self)
 		if not PremadeFilter_Frame.selectedCategory then
 			PremadeFilter_Frame.selectedCategory = LFGListFrame.CategorySelection.selectedCategory;
 		end
-		
+
 		for i=1, #self.results do
 			local resultID = self.results[i];
-			local id, activityID, name, comment, voiceChat, iLvl, honorLevel, age, numBNetFriends, numCharFriends, numGuildMates, isDelisted, leaderName, numMembers = C_LFGList.GetSearchResultInfo(resultID);
+			local searchResultInfo = C_LFGList.GetSearchResultInfo(resultID)
+			local age = searchResultInfo.age;
+			local id = searchResultInfo.searchResultID;
+			local activityID = searchResultInfo.activityID;
+			local leaderName = searchResultInfo.leaderName;
+			local name = searchResultInfo.name;
+			local comment = searchResultInfo.comment;
+			local voiceChat = searchResultInfo.voiceChat;
+			local iLvl = searchResultInfo.requiredItemLevel;
+			local honorLevel = searchResultInfo.requiredHonorLevel;
+			local numMembers = searchResultInfo.numMembers;
+			local numBNetFriends = searchResultInfo.numBNetFriends;
+			local numCharFriends = searchResultInfo.numCharFriends;
+			local numGuildMates = searchResultInfo.numGuildMates;
+			local isDelisted = searchResultInfo.isDelisted;
+			local autoAccept = searchResultInfo.autoAccept;
+			local questID = searchResultInfo.questID;
+
 			local activityName, shortName, categoryID, groupID, itemLevel, filters, minLevel, maxPlayers, displayType = C_LFGList.GetActivityInfo(activityID);
 			local memberCounts = C_LFGList.GetSearchResultMemberCounts(resultID);
 			
@@ -2762,7 +2779,23 @@ function LFGListSearchPanel_UpdateResults(self)
 			local result = (idx <= #apps) and apps[idx] or results[idx - #apps];
 
 			if ( result ) then
-				local id, activityID, name, comment, voiceChat, iLvl, honorLevel, age, numBNetFriends, numCharFriends, numGuildMates, isDelisted, leaderName, numMembers = C_LFGList.GetSearchResultInfo(result);
+				local searchResultInfo = C_LFGList.GetSearchResultInfo(result)
+				local age = searchResultInfo.age;
+				local id = searchResultInfo.searchResultID;
+				local activityID = searchResultInfo.activityID;
+				local leaderName = searchResultInfo.leaderName;
+				local name = searchResultInfo.name;
+				local comment = searchResultInfo.comment;
+				local voiceChat = searchResultInfo.voiceChat;
+				local iLvl = searchResultInfo.requiredItemLevel;
+				local honorLevel = searchResultInfo.requiredHonorLevel;
+				local numFriends = searchResultInfo.numMembers;
+				local numBNetFriends = searchResultInfo.numBNetFriends;
+				local numCharFriends = searchResultInfo.numCharFriends;
+				local numGuildMates = searchResultInfo.numGuildMates;
+				local isDelisted = searchResultInfo.isDelisted;
+				local autoAccept = searchResultInfo.autoAccept;
+				local questID = searchResultInfo.questID;
 				local infoName = PremadeFilter_GetInfoName(activityID, name);
 				button.resultID = result;
 				button.infoName = infoName;
@@ -2882,7 +2915,23 @@ function LFGListSearchEntry_Update(self)
 
 	local panel = self:GetParent():GetParent():GetParent();
 
-	local id, activityID, name, comment, voiceChat, iLvl, honorLevel, age, numBNetFriends, numCharFriends, numGuildMates, isDelisted, leaderName, numMembers = C_LFGList.GetSearchResultInfo(resultID);
+	local searchResultInfo = C_LFGList.GetSearchResultInfo(resultID)
+	local age = searchResultInfo.age;
+	local id = searchResultInfo.searchResultID;
+	local activityID = searchResultInfo.activityID;
+	local leaderName = searchResultInfo.leaderName;
+	local name = searchResultInfo.name;
+	local comment = searchResultInfo.comment;
+	local voiceChat = searchResultInfo.voiceChat;
+	local iLvl = searchResultInfo.requiredItemLevel;
+	local honorLevel = searchResultInfo.requiredHonorLevel;
+	local numFriends = searchResultInfo.numMembers;
+	local numBNetFriends = searchResultInfo.numBNetFriends;
+	local numCharFriends = searchResultInfo.numCharFriends;
+	local numGuildMates = searchResultInfo.numGuildMates;
+	local isDelisted = searchResultInfo.isDelisted;
+	local autoAccept = searchResultInfo.autoAccept;
+	local questID = searchResultInfo.questID;
 	local activityName = C_LFGList.GetActivityInfo(activityID);
 	local infoName = PremadeFilter_GetInfoName(activityID, name);
 	
@@ -2944,7 +2993,23 @@ end
 
 
 function PremadeFilter_GetTooltipInfo(resultID)
- 	local id, activityID, name, comment, voiceChat, iLvl, honorLevel, age, numBNetFriends, numCharFriends, numGuildMates, isDelisted, leaderName,numMembers = C_LFGList.GetSearchResultInfo(resultID);
+	local searchResultInfo = C_LFGList.GetSearchResultInfo(resultID)
+	local age = searchResultInfo.age;
+	local id = searchResultInfo.searchResultID;
+	local activityID = searchResultInfo.activityID;
+	local leaderName = searchResultInfo.leaderName;
+	local name = searchResultInfo.name;
+	local comment = searchResultInfo.comment;
+	local voiceChat = searchResultInfo.voiceChat;
+	local iLvl = searchResultInfo.requiredItemLevel;
+	local honorLevel = searchResultInfo.requiredHonorLevel;
+	local numMembers = searchResultInfo.numMembers;
+	local numBNetFriends = searchResultInfo.numBNetFriends;
+	local numCharFriends = searchResultInfo.numCharFriends;
+	local numGuildMates = searchResultInfo.numGuildMates;
+	local isDelisted = searchResultInfo.isDelisted;
+	local autoAccept = searchResultInfo.autoAccept;
+	local questID = searchResultInfo.questID;
 	
 	if not activityID then
 		return nil;
@@ -3085,8 +3150,40 @@ function PremadeFilter_SearchEntry_OnEnter(self)
 end
 
 function LFGListUtil_SortSearchResultsCB(id1, id2)
-	local id1, activityID1, name1, comment1, voiceChat1, iLvl1, honorLevel1, age1, numBNetFriends1, numCharFriends1, numGuildMates1, isDelisted1, leaderName1, numMembers1 = C_LFGList.GetSearchResultInfo(id1);
-	local id2, activityID2, name2, comment2, voiceChat2, iLvl2, honorLevel2, age2, numBNetFriends2, numCharFriends2, numGuildMates2, isDelisted2, leaderName2, numMembers2 = C_LFGList.GetSearchResultInfo(id2);
+	local searchResultInfo1 = C_LFGList.GetSearchResultInfo(id1)
+	local age1 = searchResultInfo1.age;
+	local id1 = searchResultInfo1.searchResultID;
+	local activityID1 = searchResultInfo1.activityID;
+	local leaderName1 = searchResultInfo1.leaderName;
+	local name1 = searchResultInfo1.name;
+	local comment1 = searchResultInfo1.comment;
+	local voiceChat1 = searchResultInfo1.voiceChat;
+	local iLvl1 = searchResultInfo1.requiredItemLevel;
+	local honorLevel1 = searchResultInfo1.requiredHonorLevel;
+	local numFriends1 = searchResultInfo1.numMembers;
+	local numBNetFriends1 = searchResultInfo1.numBNetFriends;
+	local numCharFriends1 = searchResultInfo1.numCharFriends;
+	local numGuildMates1 = searchResultInfo1.numGuildMates;
+	local isDelisted1 = searchResultInfo1.isDelisted;
+	local autoAccept1 = searchResultInfo1.autoAccept;
+	local questID1 = searchResultInfo1.questID;
+	local searchResultInfo2 = C_LFGList.GetSearchResultInfo(id2)
+	local age2 = searchResultInfo2.age;
+	local id2 = searchResultInfo2.searchResultID;
+	local activityID2 = searchResultInfo2.activityID;
+	local leaderName2 = searchResultInfo2.leaderName;
+	local name2 = searchResultInfo2.name;
+	local comment2 = searchResultInfo2.comment;
+	local voiceChat2 = searchResultInfo2.voiceChat;
+	local iLvl2 = searchResultInfo2.requiredItemLevel;
+	local honorLevel2 = searchResultInfo2.requiredHonorLevel;
+	local numFriends2 = searchResultInfo2.numMembers;
+	local numBNetFriends2 = searchResultInfo2.numBNetFriends;
+	local numCharFriends2 = searchResultInfo2.numCharFriends;
+	local numGuildMates2 = searchResultInfo2.numGuildMates;
+	local isDelisted2 = searchResultInfo2.isDelisted;
+	local autoAccept2 = searchResultInfo2.autoAccept;
+	local questID2 = searchResultInfo2.questID;
 	
 	--If one has more friends, do that one first
 	if ( numBNetFriends1 ~= numBNetFriends2 ) then
